@@ -7,7 +7,7 @@ This is the home for the sessions content for the series on Machine Learning lea
 
 Future session are tentatively schedule for:
 
-- 7/20 session 3 - Logistic Regression: Binary Classifier Workhorse
+- 7/20 session 3 - [Logistic Regression: Binary Classifier Workhorse](https://www.meetup.com/Fort-Collins-Data-Science/events/241725026/)
 - 7/27 session 4 - Linear and Quadratic Discriminant Analysis (LDA & QDA)  
 - 8/03 session 5 - Trees  
 - 8/10 session 6 - Neural Nets 

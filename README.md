@@ -11,7 +11,7 @@ Future session are tentatively schedule for:
 - 7/27 session 4 - [Linear & Quadratic Discriminant Analysis (LDA & QDA)](https://www.meetup.com/Fort-Collins-Data-Science/events/241919131/)
 - 8/03 session 5 - Trees  
 - 8/10 session 6 - Neural Nets 
-- 8/24 session 7 - Support Vector Machines (???)
+- 8/24 session 7 - Support Vector Machines or Neural Nets part 2 (???)
 
 ### Proposed Agenda
 

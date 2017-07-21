@@ -4,11 +4,11 @@ This is the home for the sessions content for the series on Machine Learning lea
 ### [The first session was June 29, 2017](https://www.meetup.com/Fort-Collins-Data-Science/events/240483138/)
 ### [Sondra's ML overview, session 1.5, was July 6, 2017](https://www.meetup.com/Fort-Collins-Data-Science/events/240982515/)
 ### [The second session, Linear Regression - Extreme Interpretability, was July 13, 2017](https://www.meetup.com/Fort-Collins-Data-Science/events/241236268/)
+### [The third session, Logistic Regression: Binary Classifier Workhorse, was July 20, 2017](https://www.meetup.com/Fort-Collins-Data-Science/events/241725026/)
 
 Future session are tentatively schedule for:
 
-- 7/20 session 3 - [Logistic Regression: Binary Classifier Workhorse](https://www.meetup.com/Fort-Collins-Data-Science/events/241725026/)
-- 7/27 session 4 - Linear and Quadratic Discriminant Analysis (LDA & QDA)  
+- 7/27 session 4 - [Linear & Quadratic Discriminant Analysis (LDA & QDA)](https://www.meetup.com/Fort-Collins-Data-Science/events/241919131/)
 - 8/03 session 5 - Trees  
 - 8/10 session 6 - Neural Nets 
 - 8/24 session 7 - Support Vector Machines (???)

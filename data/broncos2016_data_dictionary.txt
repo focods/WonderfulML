@@ -1,0 +1,14 @@
+Descrition of fields in the file broncos2016.csv
+
+Date - string, Date the game took place, format: mm/dd/yyyy
+Week - integer, Week of the season, note that Broncos had a bye on week 11
+DenScore - integer, Denver Broncos score for this game
+OppScore - integer, opposing team score for this game
+DenWin - integer, binary value: 0 if Broncos lose, 1 if Broncos won
+Home - integer, binary value: 0 if away game, 1 if home game
+OffPassYrds - integer, Offensive passing yards
+OffRushYrds - integer, Offensive rushing yards
+Def1stDwns - integer, number of 1st downs allowed by defense
+DefPassYrds - integer, number of passing yards allowed by defense
+DefRushYrds - integer, number of rushing yards allowed by defense
+Notes - string, notes regarding a particular game

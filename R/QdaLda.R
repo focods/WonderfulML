@@ -63,7 +63,7 @@ priorPofC <- function(xtrain) {
 ## be the class labels/designations which must be an integer from 1 to k, 
 ## where k = number of classes.  Columns 2 through d+1 define each dimensional
 ## coordinate of a sample vector of length d.
-class_means <- function(xtrn) {
+classMeans <- function(xtrn) {
    ndim <- ncol(xtrn) - 1  # number of dimensions in each data sample
    nclass <- length(unique(xtrn[,1])) # calc the number of classes
    muk <- matrix(0,nclass,ndim)  # initialize matrix of means
@@ -75,5 +75,43 @@ class_means <- function(xtrn) {
       for(idim in 1:ndim)
          muk[k,idim] <- mean(xclass[,idim])
    }
-   muk <- as.matrix(muk)
+   
+   return(as.matrix(muk))
+}
+
+## Computes and returns the covariance matrix for each class.  The function 
+## returns a list of length k(number of classes) where each element contains 
+## a covariance matrix for class = element number.
+##
+## xtrain must be a |n x d+1| matrix where n is the number of training data
+## samples and d is the number of dimesions.  The first column of xtrain must
+## be the class labels/designations which must be an integer from 1 to k, 
+## where k = number of classes.  Columns 2 through d+1 define each dimensional
+## coordinate of a sample vector of length d.
+##
+## If xtrn is 1-dimensional, the return list will contain values representing
+## the variance = (standard deviation)^2 of the data within that class.
+##
+## muk - k(# of classes) x d(dimensions) matrix of class means where each row
+##       is a vector containing the mean of the class = row number
+classCovars <- function(xtrn, muk) {
+    ndim <- ncol(xtrn) - 1  # number of dimensions in each data sample
+    nclass <- length(unique(xtrn[,1])) # calc the number of classes
+    sigkall <- c()
+    for(class in 1:nclass) {
+       classrows <- which(xtrn[,1]==class)
+       xclass <- xtrn[classrows, 1:ncol(xtrn)]
+       xclass <- as.matrix(xclass[,-1])
+       Nk <- length(classrows)  # number of samples in class
+       mukfill <- matrix(muk[class,], Nk,ndim,byrow=TRUE)
+
+       sigk <- (t(xclass- mukfill) %*% (xclass - mukfill))/(Nk - 1)
+       if(class == 1)
+           sigkall <- list(sigk)  # create list if first class
+       else
+           sigkall = c(sigkall, list(sigk))  # append to list
+
+    }
+
+   return(sigkall)  # return list of covar matrices or vectors of std. dev's
 }

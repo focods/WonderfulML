@@ -68,8 +68,8 @@ classMeans <- function(xtrn) {
    nclass <- length(unique(xtrn[,1])) # calc the number of classes
    muk <- matrix(0,nclass,ndim)  # initialize matrix of means
    for(k in 1:nclass) {
-      classrows <- which(xtrn[,1]==k) # find rows for particular class
-      xclass <- xtrn[classrows,1:ncol(xtrn)]
+      sample_class_count <- which(xtrn[,1]==k) # find rows for particular class
+      xclass <- xtrn[sample_class_count,1:ncol(xtrn)]
       xclass <- as.matrix(xclass[,-1])
 
       for(idim in 1:ndim)
@@ -99,10 +99,10 @@ classCovars <- function(xtrn, muk) {
     nclass <- length(unique(xtrn[,1])) # calc the number of classes
     sigkall <- c()
     for(class in 1:nclass) {
-       classrows <- which(xtrn[,1]==class)
-       xclass <- xtrn[classrows, 1:ncol(xtrn)]
+       sample_class_count <- which(xtrn[,1] == class)
+       xclass <- xtrn[sample_class_count, 1:ncol(xtrn)]
        xclass <- as.matrix(xclass[,-1])
-       Nk <- length(classrows)  # number of samples in class
+       Nk <- length(sample_class_count)  # number of samples in class
        mukfill <- matrix(muk[class,], Nk,ndim,byrow=TRUE)
 
        sigk <- (t(xclass- mukfill) %*% (xclass - mukfill))/(Nk - 1)
@@ -122,13 +122,14 @@ classCovars <- function(xtrn, muk) {
 ## where the first column is the delta(x) for the first class and so on
 ## to the last column which is delta(x) for class k.
 ##
-## x is a N(number of samples) x d(dimensions) matrix defining the sample data.
-## muk is k(number of classes) x d(dimensions) matrix holding the means
-## for each class generated from the training data.
-## vark is list of length k(number of classes) that holds the covariant matrix
-## for each class generated from the training data.
-## pc is a list of length k(number of classes) that holds the probablity of
-## each class.
+## x - N(number of samples) x d(dimensions) matrix defining the sample data.
+## nsamp - 
+## muk - k(number of classes) x d(dimensions) matrix holding the means
+##       for each class generated from the training data.
+## vark - list of length k(number of classes) that holds the covariant matrix
+##        for each class generated from the training data.
+## pc - list of length k(number of classes) that holds the prior probablity
+##      of each class.
 ## nsamp is the number of samples in the test set being analyzed.
 ## nclass is the number of classes the function is to discriminate against.
 deltLda <- function(x, nsamp, nclass, pc, muk, var) {
@@ -149,4 +150,54 @@ deltLda <- function(x, nsamp, nclass, pc, muk, var) {
     }
 
     return(deltx)
+}
+
+
+## Computes and returns the single average covariance matrix for LDA analysis.
+##
+## N_total - total number of samples in the training set xtrn
+## K_classes - total number of unique class labels to classify against
+## xtrn - n x (d+1) matrix where n is the number of training data samples and
+##        d is the number of dimesions.  The first column must be the class
+##        class labels/designations which must be an integer from 1 to k,
+##        where k = number of classes.  Columns 2 through d+1 define each 
+##        dimensional coordinate of a sample vector of length d.
+## muk - k(# of classes) x d(dimensions) matrix of class means from xtrn.
+##       See description of return value from all to classMeans function.
+## 
+## Reference: equation (14) in this jupyter notebook:
+## https://github.com/MichaelSzczepaniak/WonderfulML/raw/master/docs/solutions/session04_r.ipynb
+## 
+avgCovar <- function(N_total, K_classes, xtrn, muk) {
+    d <- ncol(xtrn) - 1
+    sqdiff <- diag(0, d)
+    # outer sum of eqn (14)
+    for(k in 1:K_classes) {
+        sample_class_count <- which(xtrn[,1] == k)  # rows in class k
+        xclass <- as.matrix(xtrn[sample_class_count, 1:ncol(xtrn)])  # x in class k
+        xclass <- xclass[, -1]  # remove class designations - don't need
+        xclass <- as.matrix(xclass)
+
+        Nk <- length(sample_class_count)  # number of samples in the class
+        # inner sum of eqn (14)
+        for(s in 1:Nk) {
+            x <- matrix(xclass[s,], 1, d, byrow=TRUE) # 1 x d matrix (vector)
+            mu <- matrix(muk[k,], 1, d, byrow=TRUE)   # 1 x d matrix (vector)
+            # shape of sqdiff = (d x 1).(1 x d) = d x d avg covar matrix
+            sqdiff <- sqdiff + (t(x-mu)%*%(x-mu))
+        }
+    }
+    
+    return(sqdiff / (N_total - K_classes))
+
+}
+
+## Wrapper function around AvgVar
+AvgLdaCovar <- function(xtrn) {
+    N_tot <- nrow(xtrn)
+    K_class_count <- length(unique(xtrn[,1]))  # of unique classes
+    mu_k <- class_means(xtrn)
+    
+    return(avgCovar(N_tot, K_class_count, xtrn, mu_k))
+
 }

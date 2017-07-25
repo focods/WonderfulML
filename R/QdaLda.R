@@ -21,18 +21,18 @@ mydnormm <- function(xs, mu, sigma){
     d <- ncol(xs)
     nsamp <- nrow(xs)
     if (missing(mu))
-        mu <- matrix(0,1,d)   # zero mean by default
+        mu <- matrix(0, 1, d)     # zero mean by default
     if (missing(sigma))
-        sigma <- diag(1,d)    # unit covariance by default
+        sigma <- diag(1, d)       # unit covariance by default
 
-    pdist <- matrix(0,nsamp,1)  # initialize output vector
+    pdist <- matrix(0, nsamp, 1)  # initialize output vector
 
     # break up the d-dim gaussian calc. into managable piece
     normConstant <- 1/((2*pi)^(d/2)*sqrt(det(sigma)))
     invSigma <- solve(sigma)
     for (rowi in 1:nsamp) {
         x <- xs[rowi,,drop=FALSE]  # I REALLY want a row vector
-        pdist[rowi,1] <- 
+        pdist[rowi, 1] <- 
         as.numeric(normConstant*exp(-1/2 * (x-mu) %*% invSigma %*% t(x-mu)))
     }
 
@@ -73,7 +73,7 @@ deltQda <- function(x, nsamp, nclass, pc, muk, vark) {
    return(deltx)
 }
 
-## Computes and returns the prior probability vector P(C) as a 1 x k matrix.
+## Computes and returns the prior probability vector P(X) as a 1 x k matrix.
 ## 
 ## xtrain must be a |n x d+1| matrix where n is the number of training data
 ## samples and d is the number of dimesions.  The first column of xtrain must
@@ -83,7 +83,7 @@ deltQda <- function(x, nsamp, nclass, pc, muk, vark) {
 ##
 ## The function returns vector/list of size k corresponding to P(C). The
 ## first value will be P(C=1) followed by P(C=2), etc. up to P(C=K)
-priorPofC <- function(xtrain) {
+priorPofX <- function(xtrain) {
     nclass <- length(unique(xtrain[,1]))  # number of classes in training set
     pofc <- c()
     for(class in 1:nclass) {
@@ -236,7 +236,7 @@ avgCovar <- function(N_total, K_classes, xtrn, muk) {
 AvgLdaCovar <- function(xtrn) {
     N_tot <- nrow(xtrn)
     K_class_count <- length(unique(xtrn[,1]))  # of unique classes
-    mu_k <- class_means(xtrn)
+    mu_k <- classMeans(xtrn)
     
     return(avgCovar(N_tot, K_class_count, xtrn, mu_k))
 

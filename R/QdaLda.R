@@ -1,4 +1,44 @@
 
+## Returns the d-dimensional gaussian probability density for multiple samples
+## xs - matrix of samples:  n-samples x d-dimensions
+## mu - 1 x d matrix of the d-dimensional mean of the distribution
+## sigma - d x d covariance matrix of the d-dimensional distribution
+## If no samples (xs) are supplies, just a definition is returned.
+## If no means (mu) are supplied, assume std. norm. dist. w/ all mu=0.
+## If no sigma covariance matrix is supplied, again, assume std. norm.
+## dist. w/ sigma = the dxd identity matrix
+mydnormm <- function(xs, mu, sigma){
+    if (missing(xs)) { 
+        cat(" mydnorm(xs, mu, sigma)\n", 
+            " xs: n-Samples x d-Dimensions\n", 
+            " mu: 1 x d-Dimensions\n", 
+            " sigma: d-Dimensions x d-Dimensions\n") 
+        return() 
+    }
+    xs <- as.matrix(xs)  # to handle args like c(0,0,0)
+    mu <- as.matrix(mu)
+    sigma <- as.matrix(sigma)
+    d <- ncol(xs)
+    nsamp <- nrow(xs)
+    if (missing(mu))
+        mu <- matrix(0,1,d)   # zero mean by default
+    if (missing(sigma))
+        sigma <- diag(1,d)    # unit covariance by default
+
+    pdist <- matrix(0,nsamp,1)  # initialize output vector
+
+    # break up the d-dim gaussian calc. into managable piece
+    normConstant <- 1/((2*pi)^(d/2)*sqrt(det(sigma)))
+    invSigma <- solve(sigma)
+    for (rowi in 1:nsamp) {
+        x <- xs[rowi,,drop=FALSE]  # I REALLY want a row vector
+        pdist[rowi,1] <- 
+        as.numeric(normConstant*exp(-1/2 * (x-mu) %*% invSigma %*% t(x-mu)))
+    }
+
+    return(pdist)
+}
+
 ## Computes and returns the value of the quadratic discrimant function.
 ##
 ## x - N(number of samples) x d(dimensions) matrix defining the sample data.

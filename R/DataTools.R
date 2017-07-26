@@ -5,7 +5,9 @@
 ##        are stored in rows of a 2-D table
 ## fraction - the fraction of the original dataset used for training
 ##            (e.g. 0.8 is 80%)
-trainSetRows <- function(orig, fraction) {
+## seed - integer, seed for pseudo-random number generator
+trainSetRows <- function(orig, fraction, seed=711) {
+    set.seed(seed)
     randorder <- sample(nrow(orig))      # shuffle the deck
     nTrain <- round(nrow(orig)*fraction) # calc # of rows in training set
     trainRows <- randorder[1:nTrain]     # 1st nTrain rows in rand order

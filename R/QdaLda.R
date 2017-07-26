@@ -156,14 +156,15 @@ classCovars <- function(xtrn, muk) {
    return(sigkall)  # return list of covar matrices or vectors of std. dev's
 }
 
-## Computes and returns the value of the linear discrimant function.
+## Computes and returns the value of the linear discrimant function for
+## each class for each sample in x.
 ##
 ## Function returns a N(number of samples) x k(number of classes) matrix,
 ## where the first column is the delta(x) for the first class and so on
 ## to the last column which is delta(x) for class k.
 ##
 ## x - N(number of samples) x d(dimensions) matrix defining the sample data.
-## nsamp - 
+## nsamp - number of samples (TODO - redundant, remove next refactor)
 ## muk - k(number of classes) x d(dimensions) matrix holding the means
 ##       for each class generated from the training data.
 ## vark - list of length k(number of classes) that holds the covariant matrix

@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def normald(X, mu=None, sigma=None):
+def normald(X=None, mu=None, sigma=None):
     """ Returns the normal probability density for a D-dimensional vector X
         X - n (samples) x d (dimensions) matrix (2D numpy array) of samples
         mu - 1 x d matrix of the d-dimensional mean of the distribution
@@ -13,5 +13,11 @@ def normald(X, mu=None, sigma=None):
          w/ sigma = the d x d identity matrix
     """
     
+    if X == None:
+        def_string = " mydnorm(xs, mu, sigma) " \
+                     " X: n (samples) x d (dimensions) " \
+                     " mu: 1 x d mean vector " \
+                     " sigma: d x d covariance matrix "
+        return def_string
     
     return 0

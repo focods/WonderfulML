@@ -1,3 +1,6 @@
-
 default of credit card clients:
 https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients
+
+titanic:
+https://www.kaggle.com/c/titanic/data/
+

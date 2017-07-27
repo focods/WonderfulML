@@ -75,7 +75,7 @@ plotQda_2d <- function(niceness=0) {
         theta <- 110
     }
     d <- ncol(xtrain)  # number of dimensions
-    pc <- priorPofX(xtrain)
+    pc <- priorPofC(xtrain)
     muk <- classMeans(xtrain)
     var <- classCovars(xtrain, muk)
     #print(pc)
@@ -196,7 +196,7 @@ plotLda_2d <- function(niceness=0) {
         theta <- 110
    }
     d <- ncol(xtrain)  # number of dimensions
-    pc <- priorPofX(xtrain)
+    pc <- priorPofC(xtrain)
     muk <- classMeans(xtrain)
     var <- AvgLdaCovar(xtrain)
     #print(pc)

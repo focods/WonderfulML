@@ -73,7 +73,8 @@ deltQda <- function(x, nsamp, nclass, pc, muk, vark) {
    return(deltx)
 }
 
-## Computes and returns the prior probability vector P(X) as a 1 x k matrix.
+## Computes and returns the prior class probabilities vector P(C) as a 1 x k
+## matrix.
 ## 
 ## xtrain must be a |n x d+1| matrix where n is the number of training data
 ## samples and d is the number of dimesions.  The first column of xtrain must
@@ -83,7 +84,7 @@ deltQda <- function(x, nsamp, nclass, pc, muk, vark) {
 ##
 ## The function returns vector/list of size k corresponding to P(C). The
 ## first value will be P(C=1) followed by P(C=2), etc. up to P(C=K)
-priorPofX <- function(xtrain) {
+priorPofC <- function(xtrain) {
     nclass <- length(unique(xtrain[,1]))  # number of classes in training set
     pofc <- c()
     for(class in 1:nclass) {

@@ -157,21 +157,21 @@ classCovars <- function(xtrn, muk) {
 }
 
 ## Computes and returns the value of the linear discrimant function for
-## each class for each sample in x.
+## each sample in x.
 ##
 ## Function returns a N(number of samples) x k(number of classes) matrix,
 ## where the first column is the delta(x) for the first class and so on
 ## to the last column which is delta(x) for class k.
 ##
 ## x - N(number of samples) x d(dimensions) matrix defining the sample data.
-## nsamp - number of samples (TODO - redundant, remove next refactor)
+## nsamp - number of samples (TODO - redundant = nrow(x) )
 ## muk - k(number of classes) x d(dimensions) matrix holding the means
 ##       for each class generated from the training data.
 ## vark - list of length k(number of classes) that holds the covariant matrix
 ##        for each class generated from the training data.
 ## pc - list of length k(number of classes) that holds the prior probablity
 ##      of each class.
-## nsamp is the number of samples in the test set being analyzed.
+## nsamp is the number of samples in the set being analyzed.
 ## nclass is the number of classes the function is to discriminate against.
 deltLda <- function(x, nsamp, nclass, pc, muk, var) {
     x <- as.matrix(x)
@@ -186,7 +186,7 @@ deltLda <- function(x, nsamp, nclass, pc, muk, var) {
             mu <- matrix(muk[k,], 1, d, byrow=TRUE)
             p1 <- xs %*% invSigma %*% t(mu)
             p2 <- 0.5*(mu %*% invSigma %*% t(mu))
-            deltx[i,k] <- p1 - p2 + log(pc[k])
+            deltx[i, k] <- p1 - p2 + log(pc[k])
         }
     }
 

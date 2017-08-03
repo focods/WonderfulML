@@ -9,9 +9,9 @@ This is the home for the sessions content for the series on Machine Learning lea
 
 Future session are tentatively schedule for:
 
-- [8/03 session 5 - Trees: There's Power in Numbers](https://www.meetup.com/Fort-Collins-Data-Science/events/242129152/)
-- 8/10 session 6 - Neural Nets, Part I
-- 8/24 session 7 - Neural Nets, Part II
+- TBD session 5 - Trees: There's Power in Numbers
+- TBD session 6 - Neural Nets, Part I
+- TBD session 7 - Neural Nets, Part II
 
 ### Proposed Agenda
 

@@ -1,8 +1,11 @@
-# reference: http://machinelearningmastery.com/implement-decision-tree-algorithm-scratch-python/
-
+# Adapted from: http://machinelearningmastery.com/implement-decision-tree-algorithm-scratch-python/
+# TODO revise to handle multinomial splits (vs. limiting to binary splits)
+# TODO test multinomial revision on Figure 2. scenario
 
 
 # Calculate the Gini index for a split dataset
+# TODO: The original code does not weight the computation by partition size.
+# 
 def gini_index(groups, class_values):
     gini = 0.0
     for class_value in class_values:
@@ -11,6 +14,25 @@ def gini_index(groups, class_values):
             if size == 0:
                 continue
             proportion = [row[-1] for row in group].count(class_value) / float(size)
+            gini += (proportion * (1.0 - proportion))
+    return gini
+
+# 
+# groups - tuple or list of samples corresponding to a split group
+# class_values - tuple or list of unique class labels
+#                TODO param not necessary: info can be obtained from groups
+def gini_index2(groups, class_values):
+    gini = 0.0
+    for group in groups:
+    #for class_value in class_values:
+        #for group in groups:
+        group_size = len(group)
+        for class_value in class_values:
+            #size = len(group)
+            if group_size == 0:
+                continue
+            proportion = [row[-1] for row in group].count(class_value) / \
+                         float(group_size)
             gini += (proportion * (1.0 - proportion))
     return gini
     
@@ -33,13 +55,16 @@ def test_split(index, value, dataset):
     return left, right
     
 # Select the best split point for a dataset
+# dataset - samples expected in rows, features/predictors expected in cols,
+#           class labels expected in last column as integers
 def get_split(dataset):
     class_values = list(set(row[-1] for row in dataset))
     b_index, b_value, b_score, b_groups = 999, 999, 999, None
     for index in range(len(dataset[0])-1):
         for row in dataset:
             groups = test_split(index, row[index], dataset)
-            gini = gini_index(groups, class_values)
+            #gini = gini_index(groups, class_values)
+            gini = gini_index2(groups, class_values)
             print('X%d < %.3f Gini=%.3f' % ((index+1), row[index], gini))
             if gini < b_score:
                 b_index, b_value, b_score, b_groups = index, row[index], gini, groups

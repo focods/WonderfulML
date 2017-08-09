@@ -22,10 +22,9 @@ def gini_index(groups, class_values):
 # class_values - tuple or list of unique class labels
 #                TODO param not necessary: info can be obtained from groups
 def gini_index2(groups, class_values):
-    group_sizes = [len(group) for group in groups]
-    sample_count = sum(group_sizes)
+    sample_count = sum([len(group) for group in groups])
     gini_groups = []
-    for idx, group in enumerate(groups):
+    for group in groups:
         gini_group = 0.0
         group_size = len(group)
         for class_value in class_values:
@@ -35,7 +34,7 @@ def gini_index2(groups, class_values):
                          float(group_size)
             gini_group += (proportion * (1.0 - proportion))
         # weight the group gini score by the size of the group
-        partition_weight = group_sizes[idx] / sample_count
+        partition_weight = group_size / sample_count
         gini_groups.append(partition_weight * gini_group)
         
     return sum(gini_groups)

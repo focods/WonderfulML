@@ -17,10 +17,10 @@ def gini_index(groups, class_values):
             gini += (proportion * (1.0 - proportion))
     return gini
 
-# 
+# Calculate the Gini index for a split dataset accounting for group size.
 # groups - tuple or list of samples corresponding to a split group
 # class_values - tuple or list of unique class labels
-#                TODO param not necessary: info can be obtained from groups
+# TODO class_values can be obtained from groups - no need to pass in
 def gini_index2(groups, class_values):
     sample_count = sum([len(group) for group in groups])
     gini_groups = []

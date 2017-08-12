@@ -20,7 +20,6 @@ def gini_index(groups, class_values):
 # Calculate the Gini index for a split dataset accounting for group size.
 # groups - tuple or list of samples corresponding to a split group
 # class_values - tuple or list of unique class labels
-# TODO class_values can be obtained from groups - no need to pass in
 def gini_index2(groups, class_values):
     sample_count = sum([len(group) for group in groups])
     gini_groups = []
@@ -58,13 +57,18 @@ def test_split(index, value, dataset):
     return left, right
     
 # Select the best split point for a dataset
+# Returns a dictionary with 3 keys: index, value, groups where
+#     index = column of predictor selected for best split
+#     value = split left if predictor < value
+#     groups = tuple of 2 lists. The 1st list holds samples of left group split.
+#              The 2nd list holds sample of right group split.
 # dataset - samples expected in rows, features/predictors expected in cols,
 #           class labels expected in last column as integers
 def get_split(dataset):
     class_values = list(set(row[-1] for row in dataset))
     b_index, b_value, b_score, b_groups = 999, 999, 999, None
-    for index in range(len(dataset[0])-1):
-        for row in dataset:
+    for index in range(len(dataset[0])-1):  # loop thru predictors
+        for row in dataset:  # find best split for this predictor
             groups = test_split(index, row[index], dataset)
             #gini = gini_index(groups, class_values)
             gini = gini_index2(groups, class_values)
@@ -75,6 +79,7 @@ def get_split(dataset):
     
 # Create a terminal node value
 # Returns the class with the largest count in group
+# groups - tuple or list of samples corresponding to a split group
 def to_terminal(group):
     outcomes = [row[-1] for row in group]
     return max(set(outcomes), key=outcomes.count)
@@ -105,6 +110,9 @@ def split(node, max_depth, min_size, depth):
         split(node['right'], max_depth, min_size, depth+1)
         
 # Build a decision tree
+# train -
+# max_depth -
+# min_size -
 def build_tree(train, max_depth, min_size):
     root = get_split(train)
     split(root, max_depth, min_size, 1)

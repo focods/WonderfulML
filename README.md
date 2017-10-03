@@ -9,16 +9,14 @@ This is the home for the sessions content for the series on Machine Learning lea
 
 Future session are tentatively schedule for:
 
-- TBD session 5 - Trees: There's Power in Numbers
+- [August 24, 2017: session 5 - Trees: There's Power in Numbers](https://www.meetup.com/Fort-Collins-Data-Science/events/242413786/)
 - TBD session 6 - Neural Nets, Part I
 - TBD session 7 - Neural Nets, Part II
 
 ### Proposed Agenda
 
-The first half hour of every session is slated for review of fundamentals that will support the understanding of the algorithm(s) we'll be focusing on for next weeks assignment. If folks are good on the basics, we'll expand this time into the second half hour.
+My goal for these sessions is for you to leave them with at least have a good intuition for how the basic machine learning algorithms work and hopefully with a good enough start into how you might implement them yourself.
 
-The second half hour is slated for working through the current assignment which was assigned in the prior session. The last half hour will cover the material for the sessions main topic and a go over a quick description of the assignment due for the next session.
+To get the most out of these sessions, I recommend that you install Jupyter notebook and configure an R kernel in addition to the Python kernel that was installed with Jupyter.  I'll be creating notebooks which use both R and Python code.
 
-If anyone would like to volunteer to do a review fundamentals presentation in the first half hour, please let me know so we can coordinate you presentation.
-
-I'm going to try to work in concepts such as how to train models with boostrap methods like bagging, random forest and boosting as well as how the main cross-validation techniques work, but we may not have enough time to do much with these areas. Let me know your thoughts on how how these sessions might be more beneficial to you!
+I'm going to try to work in concepts such as how to train models with boostrap methods like bagging, random forest and boosting as well as how the main cross-validation techniques work, but we may not have enough time to do much with these areas. Let me know your thoughts on how these sessions might be more beneficial to you!

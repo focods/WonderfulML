@@ -6,16 +6,17 @@ This is the home for the sessions content for the series on Machine Learning lea
 ### [The second session, Linear Regression - Extreme Interpretability, was July 13, 2017](https://www.meetup.com/Fort-Collins-Data-Science/events/241236268/)
 ### [The third session, Logistic Regression: Binary Classifier Workhorse, was July 20, 2017](https://www.meetup.com/Fort-Collins-Data-Science/events/241725026/)
 ### [The fourth session, Linear & Quadratic Discriminant Analysis (LDA & QDA), was July 27, 2017](https://www.meetup.com/Fort-Collins-Data-Science/events/241919131/)
+### [The fifth session, Trees: There's Power in Numbers, was August 24, 2017](https://www.meetup.com/Fort-Collins-Data-Science/events/242413786/)
 
 Future session are tentatively schedule for:
 
-- [August 24, 2017: session 5 - Trees: There's Power in Numbers](https://www.meetup.com/Fort-Collins-Data-Science/events/242413786/)
-- TBD session 6 - Neural Nets, Part I
-- TBD session 7 - Neural Nets, Part II
+- Date to be announced, session 6 - Neural Nets, Part I
+- Date to be announced, session 7 - Neural Nets, Part II
+- We may do additional Neural Net sessions if there is enough interest.
 
 ### Proposed Agenda
 
-My goal for these sessions is for you to leave them with at least have a good intuition for how the basic machine learning algorithms work and hopefully with a good enough start into how you might implement them yourself.
+My goal for these sessions is for you to leave them with a good intuition for how the basic machine learning algorithms work and hopefully with a good enough start into how you might implement them yourself.
 
 To get the most out of these sessions, I recommend that you install Jupyter notebook and configure an R kernel in addition to the Python kernel that was installed with Jupyter.  I'll be creating notebooks which use both R and Python code.
 

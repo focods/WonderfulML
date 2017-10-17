@@ -3,23 +3,11 @@
 # TODO test multinomial revision on Figure 2. scenario
 
 
-# Calculate the Gini index for a split dataset
-# TODO: The original code does not weight the computation by partition size.
-# 
-def gini_index(groups, class_values):
-    gini = 0.0
-    for class_value in class_values:
-        for group in groups:
-            size = len(group)
-            if size == 0:
-                continue
-            proportion = [row[-1] for row in group].count(class_value) / float(size)
-            gini += (proportion * (1.0 - proportion))
-    return gini
 
 # Calculate the Gini index for a split dataset accounting for group size.
 # groups - tuple or list of samples corresponding to a split group
 # class_values - tuple or list of unique class labels
+# See: https://machinelearningmastery.com/implement-decision-tree-algorithm-scratch-python/#comment-409178
 def gini_index2(groups, class_values):
     sample_count = sum([len(group) for group in groups])
     gini_groups = []

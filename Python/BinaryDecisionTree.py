@@ -26,19 +26,19 @@ def gini_index2(groups, class_values):
         
     return sum(gini_groups)
     
-# Split a dataset based on an attribute and an attribute value. Returns
+# Split a dataset based on an attribute and an attribute theshold. Returns
 # a tuple of 2 lists. The 1st list holds the samples that are grouped left of
 # the index attribute/predictor.  The 2nd list holds the sample that are
 # grouped right.
 #
 # index - column number in dataset corresponding to attribute to test on
-# value - theshold to test against: sample value < value, accum left,
+# theshold - theshold to test against: sample value < theshold, accum left,
 #         else accum right
 # dataset - train data we are building our tree from
-def test_split(index, value, dataset):
+def test_split(index, theshold, dataset):
     left, right = list(), list()
     for row in dataset:
-        if row[index] < value:
+        if row[index] < theshold:
             left.append(row)
         else:
             right.append(row)

@@ -29,10 +29,14 @@ testSetRows <- function(allRows, trainRows) {
 ## Groups df by df_sum_over_col, sums over it and adds
 ## new rows with f_name = 'all' and df_sum_over_col as the sum
 ## over the group.  TODO make the f_name a variable
-addAllRows <- function(df, df_groupby_col, df_sum_over_col,
-                       df_all_label_col, all_label = 'all') {
+addAllRows <- function(df, df_groupby_col=date, df_sum_over_col=x,
+                       df_all_label_col=f_name, all_label = 'all') {
+    # do our own quoting of the first two inputs so we can tell
     quo_df_groupby_col <- enquo(df_groupby_col)
     df_sum_over_col <- enquo(df_sum_over_col)
+    # If df_all_label_col were a sting, we wouldn't need the next line.
+    # Since we are passing parameters as we do dplyr functions, we need
+    # the next line to 
     df_all_label_col <- quo_name(enquo(df_all_label_col))
     # build the records for the sums of df_groupby_col item
     ret_df <- df %>% group_by(!!quo_df_groupby_col) %>%
@@ -45,7 +49,7 @@ addAllRows <- function(df, df_groupby_col, df_sum_over_col,
 }
 
 ## test data
-getDTTestData <- function() {
+getTestData <- function() {
     d <- seq(as.Date('2017/01/01'), as.Date('2017/01/08'), "days")
     first_name <- rep("Jane", 8)
     first_name <- append(first_name, rep("Fred", 8))

@@ -1,5 +1,5 @@
 ## The Wonderful World of Machine Learning
-This is the home for the sessions content for the series on Machine Learning lead by Michael Szczepaniak
+This is the home for the sessions content for the [Fort Collins Data Science Meetup](https://www.meetup.com/Fort-Collins-Data-Science/) series on Machine Learning lead by Michael Szczepaniak
 
 ### [The first session, June 29, 2017](https://www.meetup.com/Fort-Collins-Data-Science/events/240483138/)
 ### [Sondra's ML overview, session 1.5, July 6, 2017](https://www.meetup.com/Fort-Collins-Data-Science/events/240982515/)

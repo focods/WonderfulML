@@ -24,15 +24,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="334.54192"
+     inkscape:cx="182.51396"
      inkscape:cy="333.4253"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1801"
      inkscape:window-height="1019"
-     inkscape:window-x="1943"
-     inkscape:window-y="11"
+     inkscape:window-x="80"
+     inkscape:window-y="23"
      inkscape:window-maximized="0"
      showguides="false"
      fit-margin-top="0"
@@ -461,7 +461,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -495,17 +495,6 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:9.55906773px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="117.86045"
-       y="90.142845"
-       id="text4956-3"><tspan
-         sodipodi:role="line"
-         id="tspan4954-1"
-         x="117.86045"
-         y="90.142845"
-         style="stroke-width:0.26458332">(M+1) x D</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:9.55906773px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="160.16136"
        y="163.37469"
        id="text4956-3-8"><tspan
@@ -514,17 +503,6 @@
          x="160.16136"
          y="163.37469"
          style="stroke-width:0.26458332">(M+1) x K</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:9.55906773px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="33.556038"
-       y="90.37365"
-       id="text4956-2"><tspan
-         sodipodi:role="line"
-         id="tspan4954-8"
-         x="33.556038"
-         y="90.37365"
-         style="stroke-width:0.26458332">(D+1) x N</tspan></text>
     <text
        id="text12"
        y="50.010532"
@@ -2154,27 +2132,53 @@
          x="214.64607"
          id="tspan10453-2-9-1-0"
          sodipodi:role="line">Y</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:9.55906773px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="212.98033"
-       y="90.023369"
-       id="text4956-2-7"><tspan
-         sodipodi:role="line"
-         id="tspan4954-8-2"
-         x="212.98033"
+    <g
+       id="g4082"
+       transform="translate(0.80180859,53.988445)">
+      <text
+         id="text4956-3"
+         y="90.142845"
+         x="117.86045"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:9.55906773px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="stroke-width:0.26458332"
+           y="90.142845"
+           x="117.86045"
+           id="tspan4954-1"
+           sodipodi:role="line">N x (M+1)</tspan></text>
+      <text
+         id="text4956-2"
+         y="90.37365"
+         x="33.556038"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:9.55906773px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           id="tspan4072"
+           style="stroke-width:0.26458332"
+           y="90.37365"
+           x="33.556038"
+           sodipodi:role="line">N x (D+1)</tspan></text>
+      <text
+         id="text4956-2-7"
          y="90.023369"
-         style="stroke-width:0.26458332">K x N</tspan></text>
+         x="212.98033"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:9.55906773px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="stroke-width:0.26458332"
+           y="90.023369"
+           x="212.98033"
+           id="tspan4954-8-2"
+           sodipodi:role="line">N x K</tspan></text>
+    </g>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:9.55906773px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="55.651474"
-       y="173.01997"
+       x="40.68438"
+       y="171.68362"
        id="text5201"><tspan
          sodipodi:role="line"
-         x="55.651474"
-         y="173.01997"
+         x="40.68438"
+         y="171.68362"
          style="stroke-width:0.26458332"
-         id="tspan5203">Figure 2.  Single Layer Feedforward Neural Network Configuration</tspan></text>
+         id="tspan5203">Figure 2.  Single Layer Feedforward Neural Network Configuration (samples in rows)</tspan></text>
   </g>
 </svg>

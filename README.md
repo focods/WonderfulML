@@ -11,11 +11,11 @@ This is the home for the sessions content for the [Fort Collins Data Science Mee
 
 Future session are tentatively schedule for:
 
-- Date to be announced, session 7 - Data Wrangling Part 2
-- Date to be announced, session 8 - Data Wrangling Part 3
-- Date to be announced, session 9 - Neural Nets, Part I
-- Date to be announced, session 10 - Neural Nets, Part II
-- We may do additional Neural Net sessions if there is enough interest.
+- Date to be announced, session 7 - Neural Nets, Part I
+- Date to be announced, session 8 - Neural Nets, Part II
+- Date to be announced, session 9 - Neural Nets, Part III
+- Date to be announced - Data Wrangling Part 2
+- Date to be announced - Data Wrangling Part 3
 
 ### Proposed Agenda
 

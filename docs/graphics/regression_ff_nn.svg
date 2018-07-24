@@ -14,7 +14,7 @@
    viewBox="0 0 204 185"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.0 r15299"
+   inkscape:version="0.92.1 r15371"
    sodipodi:docname="regression_ff_nn.svg">
   <sodipodi:namedview
      id="base"
@@ -24,15 +24,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="182.51396"
-     inkscape:cy="333.4253"
+     inkscape:cx="349.66743"
+     inkscape:cy="304.85387"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1801"
-     inkscape:window-height="1019"
+     inkscape:window-height="1008"
      inkscape:window-x="80"
-     inkscape:window-y="23"
+     inkscape:window-y="0"
      inkscape:window-maximized="0"
      showguides="false"
      fit-margin-top="0"
@@ -2137,48 +2137,48 @@
        transform="translate(0.80180859,53.988445)">
       <text
          id="text4956-3"
-         y="90.142845"
-         x="117.86045"
+         y="29.205393"
+         x="117.32591"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:9.55906773px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
          xml:space="preserve"><tspan
            style="stroke-width:0.26458332"
-           y="90.142845"
-           x="117.86045"
+           y="29.205393"
+           x="117.32591"
            id="tspan4954-1"
-           sodipodi:role="line">N x (M+1)</tspan></text>
+           sodipodi:role="line">(M+1) x N</tspan></text>
       <text
          id="text4956-2"
-         y="90.37365"
-         x="33.556038"
+         y="42.532406"
+         x="32.75423"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:9.55906773px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
          xml:space="preserve"><tspan
            id="tspan4072"
            style="stroke-width:0.26458332"
-           y="90.37365"
-           x="33.556038"
-           sodipodi:role="line">N x (D+1)</tspan></text>
+           y="42.532406"
+           x="32.75423"
+           sodipodi:role="line">(D+1) x N</tspan></text>
       <text
          id="text4956-2-7"
-         y="90.023369"
-         x="212.98033"
+         y="29.353186"
+         x="212.17853"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:9.55906773px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
          xml:space="preserve"><tspan
            style="stroke-width:0.26458332"
-           y="90.023369"
-           x="212.98033"
+           y="29.353186"
+           x="212.17853"
            id="tspan4954-8-2"
-           sodipodi:role="line">N x K</tspan></text>
+           sodipodi:role="line">K x N</tspan></text>
     </g>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:9.55906773px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="40.68438"
-       y="171.68362"
+       x="38.546223"
+       y="169.54547"
        id="text5201"><tspan
          sodipodi:role="line"
-         x="40.68438"
-         y="171.68362"
+         x="38.546223"
+         y="169.54547"
          style="stroke-width:0.26458332"
-         id="tspan5203">Figure 2.  Single Layer Feedforward Neural Network Configuration (samples in rows)</tspan></text>
+         id="tspan5203">Single Hidden Layer Feedforward Neural Network Configuration (samples in columns)</tspan></text>
   </g>
 </svg>
